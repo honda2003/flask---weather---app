@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>weather app </title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🌦 Weather App</h1>
+    <button id="toggleDark" class="dark-btn">🌙</button>
+
+    <form method="POST">
+        <input type="text" name="city" placeholder="Enter city" required>
+        <button type="submit">Get Weather</button>
+    </form>
+
+    {% if weather %}
+        {% if weather.error %}
+            <p class="error">{{ weather.error }}</p>
+        {% else %}
+            <h2>{{ weather.city }}, {{ weather.country }}</h2>
+            <p>🌡 {{ weather.temp }} °C</p>
+            <p>💧 {{ weather.humidity }}%</p>
+            <p>☁ {{ weather.desc }}</p>
+        {% endif %}
+    {% endif %}
+</div>
+<script>
+    const toggleBtn = document.getElementById("toggleDark");
+
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+
+        if (document.body.classList.contains("dark")) {
+            toggleBtn.textContent = "☀️";
+            localStorage.setItem("theme", "dark");
+        } else {
+            toggleBtn.textContent = "🌙";
+            localStorage.setItem("theme", "light");
+        }
+    });
+
+    // Load saved theme
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
+        toggleBtn.textContent = "☀️";
+    }
+</script>
+</body>
+</html>

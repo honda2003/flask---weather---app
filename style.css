@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: #ffffff;
+    width: 360px;
+    padding: 25px 22px 30px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.container h1 {
+    margin-bottom: 18px;
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #6c63ff;
+}
+
+button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #6c63ff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #554ee2;
+}
+
+.result {
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.result h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.result p {
+    margin: 6px 0;
+    font-size: 15px;
+    color: #555;
+}
+
+.error {
+    color: red;
+    margin-top: 15px;
+    font-weight: bold;
+}
+.dark-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    background: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+/* ===== DARK MODE ===== */
+body.dark {
+    background: linear-gradient(135deg, #1e1e2f, #121212);
+}
+
+body.dark .container {
+    background: #1f1f2e;
+    color: #ffffff;
+}
+
+body.dark h1,
+body.dark h2 {
+    color: #ffffff;
+}
+
+body.dark input {
+    background: #2b2b3d;
+    color: white;
+    border: 1px solid #444;
+}
+
+body.dark input::placeholder {
+    color: #aaa;
+}
+
+body.dark button {
+    background: #6c63ff;
+}
+
+body.dark .result p {
+    color: #ddd;
+}
